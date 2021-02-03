@@ -2,7 +2,7 @@ package com.example.demo.service.role;
 
 
 import com.example.demo.model.Role;
-import com.example.demo.repository.IRoleRepository;
+import com.example.demo.repository.user.IRoleRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

@@ -1,4 +1,4 @@
-package com.example.demo.model.jwt;
+package com.example.demo.model;
 
 import lombok.Data;
 import org.springframework.security.core.GrantedAuthority;

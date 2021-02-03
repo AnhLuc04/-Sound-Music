@@ -1,7 +1,7 @@
 package com.example.demo.service.user;
 
 import com.example.demo.model.User;
-import com.example.demo.repository.IUserRepository;
+import com.example.demo.repository.user.IUserRepository;
 import javassist.NotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
