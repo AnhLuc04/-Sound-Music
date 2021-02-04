@@ -29,6 +29,7 @@ public class AuthController {
     private IUserService iUserService;
     @Autowired
     private PasswordEncoder passwordEncoder;
+
     //Đăng nhập tài khoản
     @PostMapping("/Login")
     public ResponseEntity<?> login(@RequestBody User user) {
@@ -46,17 +47,16 @@ public class AuthController {
         }
         return null;
     }
+
     //    cap nhat mat khau
     @PutMapping("/changePassword/{id}")
     public ResponseEntity<User> changePassword(@RequestBody User user, @PathVariable Long id) throws NotFoundException {
         User userOptional = iUserService.findById(id).get();
-//        if (!userOptional.isPresent()) {
-//            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-//        }
         userOptional.setPassword(passwordEncoder.encode(user.getPassword()));
         iUserService.save(userOptional);
         return new ResponseEntity<>(HttpStatus.OK);
     }
+
     @GetMapping("/listUser")
     private ResponseEntity<Iterable<User>> listUser() {
         Iterable<User> listUser = iUserService.findAll();

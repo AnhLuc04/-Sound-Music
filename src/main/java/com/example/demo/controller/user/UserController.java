@@ -72,7 +72,7 @@ public class UserController {
         iUserService.save(user1);
         return new ResponseEntity<>(HttpStatus.OK);
     }
-
+// kiểm tra userName đã tồn tại chưa
     @PostMapping("/check")
     public ResponseEntity<Boolean> checkUsername(@RequestBody String username) {
         boolean isValid = iUserService.checkUser(username);
